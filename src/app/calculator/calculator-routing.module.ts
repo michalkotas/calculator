@@ -7,15 +7,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'calculator',
-    loadChildren: () =>
-      import('./calculator/calculator.module').then((m) => m.CalculatorModule),
-  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class CalculatorRoutingModule {}
