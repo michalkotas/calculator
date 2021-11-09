@@ -5,6 +5,7 @@ const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
+  // "bridge",
   /* mapped paths to share */
 ]);
 
@@ -48,6 +49,12 @@ module.exports = {
         "@angular/router": {
           singleton: true,
           strictVersion: true,
+          requiredVersion: "auto",
+        },
+        bridge: {
+          //uncomment when bridge lib published in real registry
+          singleton: true,
+          // strictVersion: true,
           requiredVersion: "auto",
         },
 
