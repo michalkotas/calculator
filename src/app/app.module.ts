@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -11,10 +13,14 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent
   ],
   imports: [
+    IonicModule,
     BrowserModule,
+    IonicRouteStrategy,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

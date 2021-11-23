@@ -1,0 +1,10 @@
+{
+  "defaultProject": "calculator",
+  "projects": {
+    "calculator": {
+      "name": "calculator",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}
