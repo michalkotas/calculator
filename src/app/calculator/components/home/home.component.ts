@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import Portals, { InitialContext } from "@ionic/portals";
+// import Portals, { InitialContext } from "@ionic/portals";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  initialContext!: InitialContext<any>;
+  // initialContext!: InitialContext<any>;
   publishResults: any;
   publishError: any;
   display!: string;
-  firstval: number|null = null;
+  firstval: number | null = null;
   operator: any = null;
   newcursor = false;
   isc = false;
@@ -19,20 +19,20 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    Portals.getInitialContext().then(
-      (context) => {
-        this.initialContext = context;
-        const value = context.value as any;
-        if (value?.initialResult) {
-          this.display = value?.initialResult;
-        } else {
-          this.display = "0";
-        }
-      },
-      (err) => {
-        this.display = "0";
-      }
-    );
+    // Portals.getInitialContext().then(
+    //   (context) => {
+    //     this.initialContext = context;
+    //     const value = context.value as any;
+    //     if (value?.initialResult) {
+    //       this.display = value?.initialResult;
+    //     } else {
+    //       this.display = "0";
+    //     }
+    //   },
+    //   (err) => {
+    //     this.display = "0";
+    //   }
+    // );
   }
 
   click(val: any) {
@@ -193,39 +193,38 @@ export class HomeComponent implements OnInit {
   }
 
   calclast() {
-    if (this.firstval){
-    switch (this.operator) {
-      case ':':
-        if (this.iscomma === true) {
-          this.firstval = (this.firstval / parseFloat(this.display));
-        } else {
-          this.firstval = (this.firstval / parseInt(this.display, 0));
-        }
-        break;
-      case 'X':
-        if (this.iscomma === true) {
-          this.firstval = (this.firstval * parseFloat(this.display));
-        } else {
-          this.firstval = (this.firstval * parseInt(this.display, 0));
-        }
-        break;
-      case '-':
-        if (this.iscomma === true) {
-          this.firstval = (this.firstval - parseFloat(this.display));
-        } else {
-          this.firstval = (this.firstval - parseInt(this.display, 0));
-        }
-        break;
-      case '+':
-        if (this.iscomma === true) {
-          this.firstval = (this.firstval + parseFloat(this.display));
-        } else {
-          this.firstval = (this.firstval + parseInt(this.display, 0));
-        }
-        break;
+    if (this.firstval) {
+      switch (this.operator) {
+        case ':':
+          if (this.iscomma === true) {
+            this.firstval = this.firstval / parseFloat(this.display);
+          } else {
+            this.firstval = this.firstval / parseInt(this.display, 0);
+          }
+          break;
+        case 'X':
+          if (this.iscomma === true) {
+            this.firstval = this.firstval * parseFloat(this.display);
+          } else {
+            this.firstval = this.firstval * parseInt(this.display, 0);
+          }
+          break;
+        case '-':
+          if (this.iscomma === true) {
+            this.firstval = this.firstval - parseFloat(this.display);
+          } else {
+            this.firstval = this.firstval - parseInt(this.display, 0);
+          }
+          break;
+        case '+':
+          if (this.iscomma === true) {
+            this.firstval = this.firstval + parseFloat(this.display);
+          } else {
+            this.firstval = this.firstval + parseInt(this.display, 0);
+          }
+          break;
       }
     }
     this.display = this.firstval ? this.firstval.toString() : '';
   }
-
 }
