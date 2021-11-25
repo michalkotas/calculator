@@ -51,6 +51,16 @@ module.exports = {
           strictVersion: true,
           requiredVersion: "auto",
         },
+        "@ionic/angular": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@ionic/portals": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
         bridge: {
           //uncomment when bridge lib published in real registry
           singleton: true,
