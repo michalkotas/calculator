@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CalculatorRoutingModule } from './calculator-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { BridgeModule } from 'bridge';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NumericValueAccessor } from '@ionic/angular';
+import * as x from '@ionic/angular';
 // import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

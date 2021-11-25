@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BridgeService } from 'bridge';
 // import Portals, { InitialContext } from "@ionic/portals";
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   isc = false;
   iscomma = false;
 
-  constructor() {}
+  constructor(public pridgeService: BridgeService) {}
 
   ngOnInit() {
     // Portals.getInitialContext().then(
@@ -226,5 +227,18 @@ export class HomeComponent implements OnInit {
       }
     }
     this.display = this.firstval ? this.firstval.toString() : '';
+    this.pridgeService
+      .publish({
+        topic: 'resultToShow',
+        data: parseFloat(this.display),
+      })
+      .then(
+        (result) => {
+          this.publishResults = result;
+        },
+        (error) => {
+          this.publishError = error;
+        }
+      );
   }
 }
