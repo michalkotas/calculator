@@ -51,16 +51,22 @@ module.exports = {
           strictVersion: true,
           requiredVersion: "auto",
         },
-        "@ionic/angular": {
+        "@ionic/core": {
           singleton: true,
           strictVersion: true,
-          requiredVersion: "auto",
+          // requiredVersion: "auto",
         },
-        "@ionic/portals": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
+        //TODO from some reason it dosn't work (No value accessor  problem)
+        // "@ionic/angular": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   // requiredVersion: "auto",
+        // },
+        // "@ionic/portals": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   requiredVersion: "auto",
+        // },
         bridge: {
           //uncomment when bridge lib published in real registry
           singleton: true,

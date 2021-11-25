@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   // initialContext!: InitialContext<any>;
   publishResults: any;
   publishError: any;
-  display!: string;
+  display = '0';
   firstval: number | null = null;
   operator: any = null;
   newcursor = false;
