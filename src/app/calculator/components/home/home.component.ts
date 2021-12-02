@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Portals from '@ionic/portals';
 import { BridgeService } from 'bridge';
 // import Portals, { InitialContext } from "@ionic/portals";
 @Component({
@@ -228,7 +229,7 @@ export class HomeComponent implements OnInit {
     }
     this.display = this.firstval ? this.firstval.toString() : '';
     this.pridgeService
-      .publish({
+      Portals.publish({
         topic: 'resultToShow',
         data: parseFloat(this.display),
       })
