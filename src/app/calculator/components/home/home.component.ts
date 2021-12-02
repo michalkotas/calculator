@@ -7,7 +7,7 @@ import { BridgeService } from 'bridge';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
   // initialContext!: InitialContext<any>;
   publishResults: any;
   publishError: any;
@@ -20,22 +20,22 @@ export class HomeComponent implements OnInit {
 
   constructor(public pridgeService: BridgeService) {}
 
-  ngOnInit() {
-    // Portals.getInitialContext().then(
-    //   (context) => {
-    //     this.initialContext = context;
-    //     const value = context.value as any;
-    //     if (value?.initialResult) {
-    //       this.display = value?.initialResult;
-    //     } else {
-    //       this.display = "0";
-    //     }
-    //   },
-    //   (err) => {
-    //     this.display = "0";
-    //   }
-    // );
-  }
+  // ngOnInit() {
+  //   // Portals.getInitialContext().then(
+  //   //   (context) => {
+  //   //     this.initialContext = context;
+  //   //     const value = context.value as any;
+  //   //     if (value?.initialResult) {
+  //   //       this.display = value?.initialResult;
+  //   //     } else {
+  //   //       this.display = "0";
+  //   //     }
+  //   //   },
+  //   //   (err) => {
+  //   //     this.display = "0";
+  //   //   }
+  //   // );
+  // }
 
   click(val: any) {
     switch (val) {
